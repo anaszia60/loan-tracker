@@ -1,60 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Loan Tracker (PKR)</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Futuristic Loan Tracker</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-  <h1>🪙 Loan Tracker (PKR)</h1>
+<body class="dark-mode">
+
+  <!-- Theme toggle -->
+  <div class="theme-toggle">
+    <label class="switch">
+      <input type="checkbox" id="modeToggle">
+      <span class="slider"></span>
+    </label>
+    <span id="modeLabel">Dark Mode</span>
+  </div>
 
   <div class="container">
-    <!-- LEFT: Add Loan Form -->
-    <div class="card">
-      <h2>Add New Loan</h2>
+    <h1>🚀  Loan Tracker</h1>
+
+    <!-- Add Loan Form -->
+    <div class="card form-card">
+      <h2>Add Loan</h2>
       <form id="loanForm">
-        <label for="friendName">Friend's Name</label>
-        <input type="text" id="friendName" required placeholder="e.g., Rabbit">
-
-        <label for="amount">Amount (PKR)</label>
-        <input type="number" id="amount" min="1" required placeholder="e.g., 5000">
-
-        <label for="date">Date</label>
-        <input type="date" id="date" required>
-
+        <input type="text" id="name" placeholder="Rabbit" required>
+        <input type="number" id="amount" placeholder="Amount (PKR)" required min="1">
         <button type="submit">Add Loan</button>
       </form>
-
-      <div id="message"></div>
     </div>
 
-    <!-- RIGHT: Loans Table + Summary -->
-    <div class="card">
+    <!-- Loan Table -->
+    <div class="card list-card">
       <h2>All Loans</h2>
-      <div id="summary" class="summary">
-        <h3>Total Owed Per Friend</h3>
-        <div id="summaryList"></div>
-      </div>
-
-      <table id="loansTable">        
+      <table id="loanTable">
         <thead>
           <tr>
             <th>Friend</th>
-            <th>Amount (PKR)</th>
-            <th>Paid</th>
+            <th>Total</th>
+            <th>Remaining</th>
             <th>Status</th>
-            <th>Date</th>
-            <th>Actions</th>
+            <th>Pay</th>
           </tr>
         </thead>
-        <tbody id="loansBody"></tbody>
+        <tbody id="loanList"></tbody>
       </table>
     </div>
   </div>
 
-  <script src="js/script.js"></script>
   <script src="js/script.js"></script>
 </body>
 </html>
